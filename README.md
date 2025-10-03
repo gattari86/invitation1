@@ -44,6 +44,28 @@ Simply open `index.html` in your browser. No build process required!
 2. Import repository in Vercel
 3. Deploy automatically
 
+**⚠️ IMPORTANT - Image Path Fix:**
+If images don't load on Vercel, ensure your `vercel.json` uses this configuration:
+```json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "**",
+      "use": "@vercel/static"
+    }
+  ]
+}
+```
+The `"src": "**"` glob pattern ensures Vercel serves ALL files in the repository, not just index.html.
+
+**Image Path Best Practices:**
+- ✅ Use relative paths: `assets/images/photo.jpg`
+- ✅ Use absolute from root: `/assets/images/photo.jpg`
+- ✅ Use dot-slash: `./assets/images/photo.jpg`
+- ❌ Don't use `src: "index.html"` only in vercel.json
+- All three path formats work once Vercel is configured correctly!
+
 ### Deploy to Netlify
 
 1. Drag and drop the project folder to Netlify

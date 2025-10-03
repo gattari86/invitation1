@@ -216,6 +216,63 @@
             color: white;
         }
 
+        /* Quick Navigation Menu */
+        .quick-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(168, 181, 160, 0.2);
+        }
+
+        .quick-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .quick-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: var(--charcoal);
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .quick-nav-item:hover {
+            color: var(--coral-orange);
+            background: rgba(233, 116, 81, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .quick-nav-item i {
+            font-size: 24px;
+            color: var(--sage-green);
+            transition: all 0.3s ease;
+        }
+
+        .quick-nav-item:hover i {
+            color: var(--coral-orange);
+            transform: scale(1.1);
+        }
+
+        .quick-nav-item span {
+            font-size: 0.85rem;
+            font-weight: 500;
+            font-family: var(--sans-font);
+        }
+
         /* Section Styles */
         section {
             padding: 100px 20px;
@@ -678,13 +735,49 @@
                 padding: 60px 15px;
             }
 
+            /* Mobile Quick Nav */
+            .quick-nav {
+                padding: 10px 15px;
+            }
+
+            .quick-nav-container {
+                gap: 15px;
+            }
+
+            .quick-nav-item {
+                padding: 6px 10px;
+                gap: 3px;
+            }
+
+            .quick-nav-item i {
+                font-size: 20px;
+            }
+
+            .quick-nav-item span {
+                font-size: 0.7rem;
+            }
+
+            /* Mobile Countdown - Horizontal Line */
             .countdown-timer {
-                gap: 20px;
+                gap: 10px;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding: 10px 0;
             }
 
             .countdown-item {
-                min-width: 100px;
-                padding: 20px;
+                min-width: 80px;
+                flex: 1;
+                padding: 15px 10px;
+            }
+
+            .countdown-item .number {
+                font-size: 2rem;
+            }
+
+            .countdown-item .label {
+                font-size: 0.75rem;
             }
 
             .event-card {
@@ -722,8 +815,46 @@
         </div>
     </section>
 
+    <!-- Quick Navigation Menu -->
+    <nav class="quick-nav">
+        <div class="quick-nav-container">
+            <a href="#welcome" class="quick-nav-item">
+                <i class="ph ph-hand-waving"></i>
+                <span>Welcome</span>
+            </a>
+            <a href="#countdown" class="quick-nav-item">
+                <i class="ph ph-clock"></i>
+                <span>Countdown</span>
+            </a>
+            <a href="#event-details" class="quick-nav-item">
+                <i class="ph ph-calendar"></i>
+                <span>Schedule</span>
+            </a>
+            <a href="#resort" class="quick-nav-item">
+                <i class="ph ph-island"></i>
+                <span>Resort</span>
+            </a>
+            <a href="#family-gallery" class="quick-nav-item">
+                <i class="ph ph-images"></i>
+                <span>Gallery</span>
+            </a>
+            <a href="#attire" class="quick-nav-item">
+                <i class="ph ph-dress"></i>
+                <span>Attire</span>
+            </a>
+            <a href="#faq" class="quick-nav-item">
+                <i class="ph ph-question"></i>
+                <span>FAQ</span>
+            </a>
+            <a href="#rsvp" class="quick-nav-item">
+                <i class="ph ph-envelope"></i>
+                <span>RSVP</span>
+            </a>
+        </div>
+    </nav>
+
     <!-- Welcome Section -->
-    <section class="welcome">
+    <section class="welcome" id="welcome">
         <div class="section-header" data-aos="fade-up">
             <h2>Join Us in Paradise</h2>
         </div>
@@ -740,7 +871,7 @@
     </section>
 
     <!-- Countdown Section -->
-    <section class="countdown">
+    <section class="countdown" id="countdown">
         <div class="section-header" data-aos="fade-up">
             <h2>Counting Down</h2>
         </div>
@@ -771,7 +902,7 @@
     </section>
 
     <!-- Event Details -->
-    <section class="event-details">
+    <section class="event-details" id="event-details">
         <div class="section-header" data-aos="fade-up">
             <h2>Celebration Timeline</h2>
         </div>
@@ -798,7 +929,7 @@
     </section>
 
     <!-- Resort Gallery -->
-    <section class="resort">
+    <section class="resort" id="resort">
         <div class="section-header" data-aos="fade-up">
             <h2>Sandals Royal Caribbean</h2>
             <p style="margin-top: 20px; color: var(--warm-gray);">Your Paradise Awaits in Jamaica</p>
@@ -826,7 +957,7 @@
     </section>
 
     <!-- Family Gallery -->
-    <section class="family-gallery">
+    <section class="family-gallery" id="family-gallery">
         <div class="section-header" data-aos="fade-up">
             <h2>Our Journey</h2>
         </div>
@@ -861,7 +992,7 @@
     </section>
 
     <!-- Attire -->
-    <section class="attire">
+    <section class="attire" id="attire">
         <div class="section-header" data-aos="fade-up">
             <h2>Dress Code</h2>
             <p style="margin-top: 20px; color: var(--warm-gray);">Elegant Beach Chic</p>
@@ -878,7 +1009,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq">
+    <section class="faq" id="faq">
         <div class="section-header" data-aos="fade-up">
             <h2>Frequently Asked Questions</h2>
         </div>
@@ -966,7 +1097,7 @@
     </section>
 
     <!-- RSVP -->
-    <section class="rsvp">
+    <section class="rsvp" id="rsvp">
         <div class="section-header" data-aos="fade-up">
             <h2>Will You Join Us?</h2>
             <p style="margin-top: 20px; font-size: 1.2rem;">

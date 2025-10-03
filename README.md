@@ -1,6 +1,6 @@
-# Jeremy & Claudia - Vow Renewal 2026
+# Jane & Joe - Caribbean Wedding 2026
 
-A luxurious wedding invitation website for Jeremy and Claudia's vow renewal celebration at Dreams Jade Resort & Spa, Riviera Maya, México.
+A luxurious wedding invitation website template for destination Caribbean weddings. Features Jane and Joe's celebration at Sandals Royal Caribbean, Montego Bay, Jamaica.
 
 ## Features
 
@@ -11,7 +11,9 @@ A luxurious wedding invitation website for Jeremy and Claudia's vow renewal cele
 - 📱 **Fully Responsive**: Beautiful on all devices - desktop, tablet, and mobile
 - 🖼️ **Image Galleries**: Resort and couple photo galleries with hover effects
 - 🎭 **AOS Animations**: Scroll-triggered animations for dynamic user experience
-- 💌 **RSVP Integration**: Direct link to Google Forms for guest responses
+- 💌 **RSVP Integration**: Email-based RSVP system
+
+> **Note:** This is a template with sample information. Perfect for showcasing destination wedding website capabilities!
 
 ## Technology Stack
 
@@ -73,19 +75,20 @@ wedding-invitation-claudia-jeremy/
 └── README.md
 ```
 
-## Event Details
+## Event Details (Template Example)
 
-- **Date**: March 7, 2026
-- **Venue**: Dreams Jade Resort & Spa, Riviera Maya, México
-- **Ceremony**: 3:00 PM - Garden Pergola
-- **Cocktails**: 5:00 PM - Resort Terrace
-- **Reception**: 6:00 PM - La Terraza
+- **Date**: July 12, 2026
+- **Venue**: Sandals Royal Caribbean, Montego Bay, Jamaica
+- **Ceremony**: 4:00 PM - Beachfront Gazebo
+- **Cocktail Hour**: 5:30 PM - Sunset Terrace
+- **Reception**: 7:00 PM - Oceanview Pavilion
 
 ## Credits
 
-Created with love for Jeremy & Claudia
-Design inspiration from luxury destination wedding aesthetics
+Luxury destination wedding website template
+Design inspiration from Caribbean resort wedding aesthetics
+Perfect for showcasing wedding website design capabilities
 
 ---
 
-**#Huddleson2026** 💍
+**#JaneAndJoeInParadise** 💍🌴

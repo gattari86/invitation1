@@ -509,7 +509,7 @@
             color: white;
         }
 
-        .rsvp-button {
+        .rsvp-button, .calendar-button, .directions-button {
             display: inline-block;
             padding: 20px 60px;
             background: var(--coral-orange);
@@ -523,14 +523,127 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            cursor: pointer;
         }
 
-        .rsvp-button:hover {
+        .rsvp-button:hover, .calendar-button:hover, .directions-button:hover {
             background: white;
             color: var(--burgundy);
             border-color: white;
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .calendar-button {
+            background: var(--sage-green);
+            padding: 18px 50px;
+            font-size: 1.1rem;
+            margin-top: 40px;
+        }
+
+        .calendar-button:hover {
+            background: white;
+            color: var(--sage-green);
+            border-color: var(--sage-green);
+        }
+
+        .calendar-button i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+            vertical-align: middle;
+        }
+
+        .directions-button {
+            background: var(--rust-brown);
+            padding: 16px 40px;
+            font-size: 1rem;
+            margin-top: 30px;
+        }
+
+        .directions-button:hover {
+            background: white;
+            color: var(--rust-brown);
+            border-color: var(--rust-brown);
+        }
+
+        .directions-button i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+            vertical-align: middle;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--soft-white);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--sage-green);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            border-left-color: var(--coral-orange);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(168, 181, 160, 0.05);
+        }
+
+        .faq-question h3 {
+            font-size: 1.3rem;
+            color: var(--burgundy);
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--sage-green);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: var(--coral-orange);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 30px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 30px 25px 30px;
+        }
+
+        .faq-answer p {
+            color: var(--charcoal);
+            line-height: 1.8;
+            margin: 0;
         }
 
         /* Footer */
@@ -649,6 +762,12 @@
                 <span class="label">Seconds</span>
             </div>
         </div>
+        <div style="text-align: center;" data-aos="fade-up" data-aos-delay="500">
+            <button class="calendar-button" id="addToCalendar">
+                <i class="ph ph-calendar-plus"></i>
+                Add to Calendar
+            </button>
+        </div>
     </section>
 
     <!-- Event Details -->
@@ -695,12 +814,38 @@
                 <img src="./assets/images/resort/3.jpg" alt="Sandals Royal Caribbean Resort">
             </div>
         </div>
+        <div style="text-align: center;" data-aos="fade-up" data-aos-delay="400">
+            <a href="https://www.google.com/maps/dir//Sandals+Royal+Caribbean+Resort+and+Private+Island,+Montego+Bay,+Jamaica"
+               class="directions-button"
+               target="_blank"
+               rel="noopener noreferrer">
+                <i class="ph ph-map-pin"></i>
+                Get Directions
+            </a>
+        </div>
     </section>
 
     <!-- Family Gallery -->
     <section class="family-gallery">
         <div class="section-header" data-aos="fade-up">
             <h2>Our Journey</h2>
+        </div>
+        <div class="welcome-content" data-aos="fade-up" data-aos-delay="100" style="margin-bottom: 50px;">
+            <p>
+                Our story began five years ago at a small coffee shop in downtown, where a chance encounter over
+                a shared love of travel books turned into hours of conversation. From that first coffee date,
+                we knew we'd found something special.
+            </p>
+            <p style="margin-top: 25px;">
+                Through countless adventures—from hiking mountain trails to exploring hidden beaches, cooking
+                disasters turned into inside jokes, and quiet evenings that felt like home—we've built a love
+                that grows stronger every day. We've dreamed of the Caribbean since our very first trip together,
+                and now we're returning to say "I do" in paradise.
+            </p>
+            <p style="margin-top: 25px;">
+                Every sunrise we've watched, every challenge we've overcome, and every dream we've shared has
+                led us to this moment. We can't wait to celebrate this next chapter with the people who matter most.
+            </p>
         </div>
         <div class="family-photos">
             <div class="family-photo" data-aos="fade-up" data-aos-delay="100">
@@ -728,6 +873,94 @@
             </p>
             <div class="attire-image">
                 <img src="./assets/images/attire.jpg" alt="Attire Guide">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-question">
+                    <h3>When should I arrive in Jamaica?</h3>
+                    <i class="ph ph-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We recommend arriving at least one day before the wedding (July 11th) to settle in and enjoy the resort. This gives you time to relax, adjust to the beautiful Caribbean atmosphere, and join us for any pre-wedding festivities!</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                <div class="faq-question">
+                    <h3>What is the weather like in July?</h3>
+                    <i class="ph ph-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>July in Montego Bay is warm and tropical with temperatures averaging 80-90°F (27-32°C). Pack light, breathable clothing, sunscreen, and don't forget your swimwear! There may be occasional afternoon showers, but they're usually brief.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="faq-question">
+                    <h3>Is this an adults-only celebration?</h3>
+                    <i class="ph ph-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>While we love your little ones, we've decided to make this an adults-only celebration to allow all our guests to relax and enjoy the festivities. We hope this gives parents a chance for a well-deserved vacation!</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                <div class="faq-question">
+                    <h3>How do I book my stay at Sandals Royal Caribbean?</h3>
+                    <i class="ph ph-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Contact Sandals directly and mention our wedding to receive special group rates! You can also reach out to us for our travel coordinator's contact information who can help arrange your accommodations and any special requests.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="faq-question">
+                    <h3>What activities are available at the resort?</h3>
+                    <i class="ph ph-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Sandals Royal Caribbean offers unlimited water sports, scuba diving, golf, spa services, multiple gourmet restaurants, and access to their private island. All meals, premium drinks, and most activities are included in your stay!</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="350">
+                <div class="faq-question">
+                    <h3>Do I need a passport to travel to Jamaica?</h3>
+                    <i class="ph ph-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! A valid passport is required for US citizens traveling to Jamaica. Make sure your passport is valid for at least 6 months beyond your travel dates. Check with your country's travel requirements well in advance.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="faq-question">
+                    <h3>Will transportation be provided from the airport?</h3>
+                    <i class="ph ph-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Sandals provides complimentary round-trip airport transfers from Sangster International Airport (MBJ) in Montego Bay. The resort is approximately 15 minutes from the airport. Details will be provided after you book your stay.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="450">
+                <div class="faq-question">
+                    <h3>What about gifts?</h3>
+                    <i class="ph ph-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Your presence is the greatest gift we could ask for! If you'd like to contribute to our future together, we'll have information about our honeymoon fund. No physical gifts please, as we'll be traveling light!</p>
+                </div>
             </div>
         </div>
     </section>
@@ -832,6 +1065,71 @@
             if (hero && scrolled < window.innerHeight) {
                 hero.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
+        });
+
+        // FAQ Accordion Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Add to Calendar functionality
+        document.getElementById('addToCalendar').addEventListener('click', () => {
+            const event = {
+                title: 'Jane & Joe Wedding Celebration',
+                description: 'Join us for our wedding celebration at Sandals Royal Caribbean Resort in Montego Bay, Jamaica. Ceremony begins at 4:00 PM.',
+                location: 'Sandals Royal Caribbean Resort & Private Island, Montego Bay, Jamaica',
+                start: '2026-07-12T16:00:00',
+                end: '2026-07-12T23:00:00'
+            };
+
+            // Format dates for ICS format
+            const formatDate = (dateStr) => {
+                return dateStr.replace(/[-:]/g, '').split('.')[0] + 'Z';
+            };
+
+            const icsContent = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//Jane & Joe Wedding//EN',
+                'CALSCALE:GREGORIAN',
+                'METHOD:PUBLISH',
+                'BEGIN:VEVENT',
+                `DTSTART:${formatDate(event.start)}`,
+                `DTEND:${formatDate(event.end)}`,
+                `SUMMARY:${event.title}`,
+                `DESCRIPTION:${event.description}`,
+                `LOCATION:${event.location}`,
+                'STATUS:CONFIRMED',
+                'BEGIN:VALARM',
+                'TRIGGER:-P7D',
+                'ACTION:DISPLAY',
+                'DESCRIPTION:Reminder: Jane & Joe Wedding in 1 week',
+                'END:VALARM',
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\r\n');
+
+            // Create download
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.setAttribute('download', 'jane-and-joe-wedding.ics');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         });
     </script>
 </body>
